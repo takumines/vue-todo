@@ -3,17 +3,25 @@
   <div id="app">
     <p>現在{{ number }}書いクリックされています</p>
     <button v-on:click="countUp">カウントアップ</button>
+    <p v-on:mousemove="changeMousePosition">マウスを乗せてください</p>
+    <p>X:{{x}}, Y:{{y}}</p>
   </div>
 <!----------------------------------------------------- ------------------------------------------------>
   <script>
     new Vue({
       el: '#app',
       data: {
-        number: 0
+        number: 0,
+        x: 0,
+        y: 0
       },
       methods: {
         countUp: function() {
           this.number++;
+        },
+        changeMousePosition: function (event) {
+          this.x = event.clientX;
+          this.y = event.clientY;
         }
       }
     })

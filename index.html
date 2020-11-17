@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <div id="app">
+    <p>現在{{ number }}書いクリックされています</p>
+    <button v-on:click="countUp">カウントアップ</button>
+  </div>
+<!----------------------------------------------------- ------------------------------------------------>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        number: 0
+      },
+      methods: {
+        countUp: function() {
+          this.number++;
+        }
+      }
+    })
+  </script>

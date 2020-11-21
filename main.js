@@ -49,5 +49,9 @@ const app = new Vue({
             },
             deep: true
         }
+    },
+    created() {
+        // インスタンス作成時に自動でfetch()する
+        this.todos = todoStorage.fetch()
     }
 })
